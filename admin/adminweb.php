@@ -2,18 +2,19 @@
 include "../lib/config.php";
 include "../lib/koneksi.php";
 session_start();
-if (!isset($_SESSION['username']) and !isset($_SESSION['password'])) {
+if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
   echo "<center>Untuk mengakses modul, Anda harus login dulu <br>";
   echo "<a href=$admin_url><b>LOGIN</b></a></center>";
 } else {
 ?>
 
-  <?php $nama = $_SESSION['username']; ?>
+  <?php $email = $_SESSION['email']; ?>
   <?php
-  $queryAdmin = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE username='$nama'");
+  $queryAdmin = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE email='$email'");
   $hasilQuery = mysqli_fetch_array($queryAdmin);
+  $nama = $hasilQuery['nama'];
+  $status = $hasilQuery['status'];
 
-  $email = $hasilQuery['email'];
   ?>
 
 
@@ -167,7 +168,17 @@ if (!isset($_SESSION['username']) and !isset($_SESSION['password'])) {
                 </div>
                 <div class="text-wrapper">
                   <p class="profile-name"><?= $nama ?></p>
-                  <p class="designation">Admin Utama</p>
+                  <p class="designation">
+                    <?php
+
+                    if ($status == 1) {
+                      echo "Admin Utama";
+                    } elseif ($status == 2) {
+                      echo "Founder Ruangan";
+                    }
+
+                    ?>
+                  </p>
                 </div>
               </a>
             </li>
@@ -200,6 +211,12 @@ if (!isset($_SESSION['username']) and !isset($_SESSION['password'])) {
               <a class="nav-link" href="adminweb.php?module=list_customer">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Customer</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="adminweb.php?module=list_user">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">User</span>
               </a>
             </li>
             <li class="nav-item">
@@ -274,6 +291,15 @@ if (!isset($_SESSION['username']) and !isset($_SESSION['password'])) {
           include "module/data_ruangan/list_ruangan_admin.php";
         } elseif ($_GET['module'] == 'list_Testimoni') {
           include "module/data_testimoni/list_Testimoni.php";
+        }
+
+        // module user
+        elseif ($_GET['module'] == 'list_user') {
+          include "module/data_user/list_user.php";
+        } elseif ($_GET['module'] == 'tambah_user') {
+          include "module/data_user/tambah_user.php";
+        } elseif ($_GET['module'] == 'edit_user') {
+          include "module/data_user/form_edit.php";
         }
 
 

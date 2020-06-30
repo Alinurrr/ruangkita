@@ -31,9 +31,9 @@
             <div class="auto-form-wrapper">
               <form action="login.php" method="post">
                 <div class="form-group">
-                  <label class="label">Username</label>
+                  <label class="label">Email</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" name="Username">
+                    <input type="text" class="form-control" placeholder="Email" name="Email">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
