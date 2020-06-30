@@ -1,19 +1,61 @@
-.mdc-card {
-  background: $mdc-card-bg;
-  padding: $mdc-card-padding;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.09);
-  border-radius: 2px;
-  .card-title {
-    font-size: 20px;
-    margin-bottom: 6px;
-    font-weight: normal;
-    @media(max-width: 768px) {
-      font-size: 16px;
+/* Cards */
+
+.card {
+  border: none;
+
+  .card-header {
+    background: lighten($card-bg, 3%);
+    padding: $card-padding-y $card-padding-x;
+    border-bottom: 1px solid $border-color;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    small {
+      margin-bottom: 0px;
+    }
+
+    &.header-sm {
+      padding: 15px $card-padding-x;
+      height: 60px;
+
+      p,
+      .dropdown .dropdown-toggle i {
+        color: $text-muted;
+      }
     }
   }
-  .card-sub-title {
-    font-size: 14px;
-    font-weight: 300;
+
+  .card-body {
+    padding: $card-padding-y $card-padding-x;
+
+    &.no-gutter {
+      padding: 0;
+    }
+
+    +.card-body {
+      padding-top: 0;
+    }
+  }
+
+  &.card-rounded {
+    border-radius: 5px;
+  }
+
+  &.card-faded {
+    background: #b5b0b2;
+    border-color: #b5b0b2;
+  }
+
+  .card-subtitle {
+    color: rgba($body-color, 0.7);
+  }
+
+  &.card-no-shadow {
+    box-shadow: none;
   }
 }
