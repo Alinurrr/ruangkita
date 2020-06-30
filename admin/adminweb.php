@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include "../lib/config.php";
+include "../lib/koneksi.php";
+session_start();
+if (!isset($_SESSION['username']) and !isset($_SESSION['password'])) {
+  echo "<center>Untuk mengakses modul, Anda harus login dulu <br>";
+  echo "<a href=$admin_url><b>LOGIN</b></a></center>";
+} else {
+?>
+
+  <?php $nama = $_SESSION['username']; ?>
+  <?php
+  $queryAdmin = mysqli_query($koneksi, "SELECT * FROM tb_admin WHERE username='$nama'");
+  $hasilQuery = mysqli_fetch_array($queryAdmin);
+
+  $email = $hasilQuery['email'];
+  ?>
+
+
+  <!DOCTYPE html>
+  <html lang="en">
+
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin Premium Bootstrap Admin Dashboard Template</title>
+    <title>Ruangkita-Adm</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/ionicons/css/ionicons.css">
@@ -21,59 +41,20 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="assets/css/demo_1/style.css">
     <!-- End Layout styles -->
-    <link rel="shortcut icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" href="assets/images/favicon00.png" />
   </head>
+
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
           <a class="navbar-brand brand-logo" href="index.html">
-            <img src="assets/images/logo.svg" alt="logo" /> </a>
+            <img src="assets/images/logo_Rk.svg" alt="logo" /> </a>
           <a class="navbar-brand brand-logo-mini" href="index.html">
-            <img src="assets/images/logo-mini.svg" alt="logo" /> </a>
+            <img src="assets/images/logo-mini_Rk.svg" alt="logo" /> </a>
         </div>
         <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
-            <li class="nav-item dropdown language-dropdown">
-              <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="d-inline-flex mr-0 mr-md-3">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>
-                </div>
-                <span class="profile-text font-weight-medium d-none d-md-block">English</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>English
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-fr"></i>
-                  </div>French
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ae"></i>
-                  </div>Arabic
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ru"></i>
-                  </div>Russian
-                </a>
-              </div>
-            </li>
-          </ul>
-          <form class="ml-auto search-form d-none d-md-block" action="#">
-            <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
-            </div>
-          </form>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -153,12 +134,12 @@
             </li>
             <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle" src="assets/images/faces/face00.jpg" alt="Profile image"> </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
-                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                  <img class="img-md rounded-circle" src="assets/images/faces/face00.jpg" alt="Profile image">
+                  <p class="mb-1 mt-3 font-weight-semibold"><?= $nama ?></p>
+                  <p class="font-weight-light text-muted mb-0"><?= $email  ?></p>
                 </div>
                 <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
                 <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
@@ -181,12 +162,12 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
+                  <img class="img-xs rounded-circle" src="assets/images/faces/face00.jpg" alt="profile image">
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
-                  <p class="profile-name">Allen Moreno</p>
-                  <p class="designation">Premium user</p>
+                  <p class="profile-name"><?= $nama ?></p>
+                  <p class="designation">Admin Utama</p>
                 </div>
               </a>
             </li>
@@ -198,27 +179,27 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="adminweb.php?module=list_admin">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Admin</span>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_founder">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Founder</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="adminweb.php?module=list_customer">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Customer</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="adminweb.php?module=list_admin">
-                <i class="menu-icon typcn typcn-document-text"></i>
-                <span class="menu-title">Member Admin</span>
-              </a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_ruangan_admin">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                 <span class="menu-title">Data Ruangan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="adminweb.php?module=list_customer">
+                <i class="menu-icon typcn typcn-document-text"></i>
+                <span class="menu-title">Customer</span>
               </a>
             </li>
             <li class="nav-item">
@@ -240,7 +221,7 @@
               </a>
             </li>
 
-<!--           <li class="nav-item">
+            <!--           <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <i class="menu-icon typcn typcn-document-add"></i>
                 <span class="menu-title">User Pages</span>
@@ -266,70 +247,61 @@
                 </ul>
               </div>
             </li>
-   --> 
+   -->
           </ul>
         </nav>
 
 
-         <?php
+        <?php
 
-            if ($_GET['module'] == 'home') {
-              include "module/home/home.php";
-            }
-            // bagian blank page //
-            elseif ($_GET['module'] == 'list_admin') {
-              include "module/data_admin/list_admin.php";
-            }elseif ($_GET['module'] == 'tambah_admin'){
-              include "module/data_admin/tambah_admin.php";
-            }elseif ($_GET['module'] == 'form_edit'){
-              include "module/data_admin/form_edit.php";
-            }
-
-
-            elseif ($_GET['module'] == 'list_founder'){
-              include "module/data_founder/list_founder.php";
-            }
-            elseif ($_GET['module'] == 'list_customer'){
-              include "module/data_customer/list_customer.php";
-            }
-
-             elseif ($_GET['module'] == 'list_pesanan'){
-              include "module/pesanan_admin/list_pesanan.php";
-            }
-             elseif ($_GET['module'] == 'list_ruangan_admin'){
-              include "module/data_ruangan/list_ruangan_admin.php";
-            }
-            
-             elseif ($_GET['module'] == 'list_Testimoni'){
-              include "module/data_testimoni/list_Testimoni.php";
-            }
+        if ($_GET['module'] == 'home') {
+          include "module/home/home.php";
+        }
+        // bagian blank page //
+        elseif ($_GET['module'] == 'list_admin') {
+          include "module/data_admin/list_admin.php";
+        } elseif ($_GET['module'] == 'tambah_admin') {
+          include "module/data_admin/tambah_admin.php";
+        } elseif ($_GET['module'] == 'form_edit') {
+          include "module/data_admin/form_edit.php";
+        } elseif ($_GET['module'] == 'list_founder') {
+          include "module/data_founder/list_founder.php";
+        } elseif ($_GET['module'] == 'list_customer') {
+          include "module/data_customer/list_customer.php";
+        } elseif ($_GET['module'] == 'list_pesanan') {
+          include "module/pesanan_admin/list_pesanan.php";
+        } elseif ($_GET['module'] == 'list_ruangan_admin') {
+          include "module/data_ruangan/list_ruangan_admin.php";
+        } elseif ($_GET['module'] == 'list_Testimoni') {
+          include "module/data_testimoni/list_Testimoni.php";
+        }
 
 
 
-            // ?? //
-            else {
-              include "module/home/home.php";
-            }
+        // ?? //
+        else {
+          include "module/home/home.php";
+        }
 
 
-            ?>
+        ?>
 
 
 
 
-         <!-- partial -->
-          <footer class="footer">
-            <div class="container-fluid clearfix">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
-              </span>
-            </div>
-          </footer>
-          <!-- partial -->
-        </div>
-        <!-- main-panel ends -->
+        <!-- partial -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
       </div>
-      <!-- page-body-wrapper ends -->
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
@@ -346,4 +318,7 @@
     <script src="assets/js/demo_1/dashboard.js"></script>
     <!-- End custom js for this page-->
   </body>
-</html>
+
+  </html>
+
+<?php } ?>
