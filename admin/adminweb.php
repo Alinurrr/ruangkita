@@ -146,7 +146,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
                 <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
                 <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item" href="index.php">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+                <a class="dropdown-item" href="logout.php">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
               </div>
             </li>
           </ul>
@@ -235,6 +235,12 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
               <a class="nav-link" href="#">
                 <i class="menu-icon typcn typcn-bell"></i>
                 <span class="menu-title">Laporan</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="logout.php">
+                <i class="menu-icon typcn typcn-bell"></i>
+                <span class="menu-title">Logout</span>
               </a>
             </li>
 
