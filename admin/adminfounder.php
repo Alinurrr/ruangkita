@@ -12,6 +12,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
   <?php
   $queryAdmin = mysqli_query($koneksi, "SELECT * FROM tb_user WHERE email='$email'");
   $hasilQuery = mysqli_fetch_array($queryAdmin);
+  $id_user = $hasilQuery['id_user'];
   $nama = $hasilQuery['nama'];
   $status = $hasilQuery['status'];
 
@@ -25,7 +26,17 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ruangkita-Adm</title>
+    <title>
+      Ruangkita- <?php
+
+                  if ($status == 1) {
+                    echo "Adm";
+                  } elseif ($status == 2) {
+                    echo "Founder";
+                  }
+
+                  ?>
+    </title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
     <link rel="stylesheet" href="assets/vendors/iconfonts/ionicons/css/ionicons.css">

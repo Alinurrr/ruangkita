@@ -188,7 +188,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Dashboard</span>
               </a>
-            </li>
+              <!-- </li>
             <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_admin">
                 <i class="menu-icon typcn typcn-document-text"></i>
@@ -200,19 +200,19 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Founder</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_ruangan_admin">
                 <i class="menu-icon typcn typcn-shopping-bag"></i>
                 <span class="menu-title">Data Ruangan</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_customer">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Customer</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="adminweb.php?module=list_user">
                 <i class="menu-icon typcn typcn-document-text"></i>
