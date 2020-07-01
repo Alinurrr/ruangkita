@@ -14,13 +14,13 @@ if (empty($_SESSION['username']) and empty($_SESSION['password'])) {
         echo "
         <script>
             alert('Data berhasil dihapus');
-            window.location = '$admin_url'+'adminweb.php?module=list_ruangan';
+            window.location='$admin_url'+'adminfounder.php?module=list_ruangan';
         </script>";
     } else {
         echo "
         <script>
             alert('Data gagal dihapus');
-            window.location = '$admin_url'+'adminweb.php?module=list_ruangan';
+            window.location='$admin_url'+'adminfounder.php?module=list_ruangan';
         </script>";
     }
 }

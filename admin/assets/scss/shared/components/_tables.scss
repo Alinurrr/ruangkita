@@ -36,7 +36,7 @@
     img {
       &:not(.thumb-image) {
         @extend .img-ss;
-        border-radius: 100%;
+        border-radius: 10%;
       }
 
       &.thumb-image {
@@ -136,7 +136,7 @@
       }
     }
   }
-
+  
   &.table-stretched {
 
     thead,

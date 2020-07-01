@@ -6,6 +6,7 @@
                <div class="card-body">
                   <h4 class="card-title">Form Tambah Ruangan</h4>
                   <form class="forms-sample" action="../admin/module_founder/data_ruangan/aksi_simpan.php" method="post" enctype="multipart/form-data">
+                     <input type="hidden" name="id_founder" value="<?php echo $id_user; ?>">
                      <div class="form-group">
                         <label for="nama_ruangan">Nama Ruangan</label>
                         <input type="text" class="form-control" id="nama_ruangan" name="nama_ruangan" placeholder="Nama Ruangan">

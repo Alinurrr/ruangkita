@@ -8823,11 +8823,6 @@ pre {
   min-width: 32px;
   height: 32px; }
 
-.img-ss, .table td img:not(.thumb-image),
-.table th img:not(.thumb-image) {
-  width: 35px;
-  min-width: 35px;
-  height: 35px; }
 
 .img-curved {
   border-radius: 10px; }
