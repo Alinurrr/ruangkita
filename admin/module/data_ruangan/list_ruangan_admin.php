@@ -15,10 +15,6 @@
                  <tr>
                    <th> Nama Ruangan </th>
                    <th> Gambar </th>
-                   <th> Jenis Ruangan</th>
-                   <th> Ukuran </th>
-                   <th> Kapasitas </th>
-                   <th> Alamat </th>
                    <th> Pemilik </th>
                    <th style="width: 80px"> Aksi </th>
                  </tr>
@@ -35,10 +31,6 @@
                      <td>
                        <img src="upload/<?= $pro['gambar']; ?>" class="img" height="100" width="100">
                      </td>
-                     <td><?php echo $pro['jenis_ruangan']; ?></td>
-                     <td><?php echo $pro['ukuran']; ?></td>
-                     <td><?php echo $pro['kapasitas']; ?></td>
-                     <td><?php echo $pro['alamat']; ?></td>
                      <td><?php echo $pro['nama']; ?></td>
                      <td>
                        <a href="<?php echo $admin_url; ?>adminweb.php?module=detail_ruangan_admin&id_ruangan=<?php echo $pro['id_ruangan']; ?>" class="btn btn-outline-primary">

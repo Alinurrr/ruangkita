@@ -13,7 +13,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
   $email = $_POST['Email'];
   $password = $_POST['Password'];
 
-  $queryEdit = mysqli_query($koneksi, "UPDATE tb_edit SET nama='$nama' , email='$email', password='$password' WHERE id_user='$idUser'");
+  $queryEdit = mysqli_query($koneksi, "UPDATE tb_user SET nama='$nama' , email='$email', password='$password' WHERE id_user='$idUser'");
 
 
   if ($queryEdit) {

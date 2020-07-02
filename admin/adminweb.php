@@ -317,6 +317,12 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
           // module user
           elseif ($_GET['module'] == 'list_user') {
             include "module/data_user/list_user.php";
+          } elseif ($_GET['module'] == 'list_user_admin') {
+            include "module/data_user/list_user_admin.php";
+          } elseif ($_GET['module'] == 'list_user_founder') {
+            include "module/data_user/list_user_founder.php";
+          } elseif ($_GET['module'] == 'list_user_customer') {
+            include "module/data_user/list_user_customer.php";
           } elseif ($_GET['module'] == 'tambah_user') {
             include "module/data_user/tambah_user.php";
           } elseif ($_GET['module'] == 'edit_user') {

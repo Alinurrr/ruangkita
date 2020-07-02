@@ -7,20 +7,20 @@ if (empty($_SESSION['username']) and empty($_SESSION['password'])) {
     include "../../../lib/config.php";
     include "../../../lib/koneksi.php";
 
-    $idAdmin = $_GET['id_admin'];
+    $idUser = $_GET['id_user'];
 
-    $QueryHapus = mysqli_query($koneksi, "DELETE FROM tb_admin WHERE id_admin = '$idAdmin'");
+    $QueryHapus = mysqli_query($koneksi, "DELETE FROM tb_user WHERE id_user = '$idUser'");
     if ($QueryHapus) {
         echo "
         <script>
             alert('Data berhasil dihapus');
-            window.location = '$admin_url'+'adminweb.php?module=list_admin';
+            window.location = '$admin_url'+'adminweb.php?module=list_user';
         </script>";
     } else {
         echo "
         <script>
             alert('Data gagal dihapus');
-            window.location = '$admin_url'+'adminweb.php?module=list_admin';
+            window.location = '$admin_url'+'adminweb.php?module=list_user';
         </script>";
     }
 }
