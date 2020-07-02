@@ -19,7 +19,7 @@
                    <th> Ukuran </th>
                    <th> Kapasitas </th>
                    <th> Alamat </th>
-                   <th> Id Pemilik </th>
+                   <th> Pemilik </th>
                    <th style="width: 80px"> Aksi </th>
                  </tr>
                </thead>
@@ -27,7 +27,7 @@
                  <?php
                   include "../lib/config.php";
                   include "../lib/koneksi.php";
-                  $QueryFounder = mysqli_query($koneksi, "SELECT * FROM tb_ruangan");
+                  $QueryFounder = mysqli_query($koneksi, "SELECT * FROM tb_ruangan r, tb_user u WHERE r.id_founder = u.id_user");
                   while ($pro = mysqli_fetch_array($QueryFounder)) {
                   ?>
                    <tr>
@@ -39,7 +39,7 @@
                      <td><?php echo $pro['ukuran']; ?></td>
                      <td><?php echo $pro['kapasitas']; ?></td>
                      <td><?php echo $pro['alamat']; ?></td>
-                     <td><?php echo $pro['id_founder']; ?></td>
+                     <td><?php echo $pro['nama']; ?></td>
                      <td>
                        <a href="<?php echo $admin_url; ?>adminweb.php?module=detail_ruangan_admin&id_ruangan=<?php echo $pro['id_ruangan']; ?>" class="btn btn-outline-primary">
                          Detail</a>
