@@ -41,11 +41,11 @@
                        <?php
                         $status = $pro['status'];
                         if ($status == "1") { ?>
-                         <button type="button" class="btn btn-primary btn-fw">Admin</button>
+                         <label class="badge badge-info">Admin</label>
                        <?php } else if ($status == "2") { ?>
-                         <button type="button" class="btn btn-success btn-fw">Founder</button>
+                         <label class="badge badge-warning">Founder</label>
                        <?php } else if ($status == "3") { ?>
-                         <button type="button" class="btn btn-secondary btn-fw">Cust</button>
+                         <label class="badge badge-success">Cust</label>
                        <?php } ?>
                      </td>
                      <td>
@@ -104,11 +104,11 @@
                        <?php
                         $status = $pro['status'];
                         if ($status == "1") { ?>
-                         <button type="button" class="btn btn-primary btn-fw">Admin</button>
+                         <label class="badge badge-info">Admin</label>
                        <?php } else if ($status == "2") { ?>
-                         <button type="button" class="btn btn-success btn-fw">Founder</button>
+                         <label class="badge badge-warning">Founder</label>
                        <?php } else if ($status == "3") { ?>
-                         <button type="button" class="btn btn-secondary btn-fw">Cust</button>
+                         <label class="badge badge-success">Cust</label>
                        <?php } ?>
                      </td>
                      <td>
@@ -165,11 +165,11 @@
                        <?php
                         $status = $pro['status'];
                         if ($status == "1") { ?>
-                         <button type="button" class="btn btn-primary btn-fw">Admin</button>
+                         <label class="badge badge-info">Admin</label>
                        <?php } else if ($status == "2") { ?>
-                         <button type="button" class="btn btn-success btn-fw">Founder</button>
+                         <label class="badge badge-warning">Founder</label>
                        <?php } else if ($status == "3") { ?>
-                         <button type="button" class="btn btn-secondary btn-fw">Cust</button>
+                         <label class="badge badge-success">Cust</label>
                        <?php } ?>
                      </td>
                      <td>

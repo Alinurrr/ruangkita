@@ -3,16 +3,6 @@
    <div class="content-wrapper">
      <div class="row">
 
-       <div class="page-header">
-         <h4 class="page-title">Data_Ruangan</h4>
-         <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-           <ul class="quick-links">
-             <li><a href="<?php echo $admin_url; ?>adminfounder.php?module=list_ruangan">List Ruangan</a></li>
-           </ul>
-         </div>
-       </div>
-
-
 
        <div class="col-lg-12 grid-margin stretch-card">
          <div class="card">
@@ -25,7 +15,11 @@
                  <tr>
                    <th> Nama Ruangan </th>
                    <th> Gambar </th>
+                   <th> Kategori Ruangan</th>
+                   <th> Ukuran </th>
+                   <th> Kapasitas </th>
                    <th> Alamat </th>
+                   <th> Deskripsi </th>
                    <th style="width: 80px"> Aksi </th>
                  </tr>
                </thead>
@@ -41,12 +35,32 @@
                      <td>
                        <img src="upload/<?= $pro['gambar']; ?>" class="thumb-image" height="100px">
                      </td>
-                     <td><?php echo $pro['alamat']; ?></td>
                      <td>
+                       <?php
 
-                       <a href="<?php echo $admin_url; ?>adminfounder.php?module=detail_ruangan&id_ruangan=<?php echo $pro['id_ruangan']; ?>" class="btn btn-outline-primary">
-                         Detail</a>
+                        if ($pro['jenis_ruangan'] == 'R01') {
+                          echo "Gedung";
+                        } elseif ($pro['jenis_ruangan'] == 'R02') {
+                          echo "Kafe";
+                        } elseif ($pro['jenis_ruangan'] == 'R03') {
+                          echo "Pegunungan";
+                        } elseif ($pro['jenis_ruangan'] == 'R04') {
+                          echo "Pedesaan";
+                        } elseif ($pro['jenis_ruangan'] == 'R05') {
+                          echo "Pesisir Pantai";
+                        }
 
+                        ?>
+                     </td>
+                     <td><?php echo $pro['ukuran']; ?> meter<sup>2</sup></td>
+                     <td><?php echo $pro['kapasitas']; ?> orang</td>
+                     <td><?php echo $pro['alamat']; ?></td>
+                     <td><?php echo $pro['deskripsi']; ?></td>
+                     <td>
+                       <a href="<?php echo $admin_url; ?>adminfounder.php?module=form_edit&id_ruangan=<?php echo $pro['id_ruangan']; ?>" class="btn btn-icons btn-inverse-primary">
+                         <i class="mdi mdi-file-document"></i></button></a>
+                       <a href="<?php echo $admin_url; ?>module_founder/data_ruangan/aksi_hapus.php?id_ruangan=<?php echo $pro['id_ruangan']; ?>" class="btn btn-icons btn-inverse-warning">
+                         <i class="mdi mdi-alert-outline"></i></button></a>
                      </td>
                    </tr>
 

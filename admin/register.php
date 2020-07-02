@@ -37,38 +37,7 @@
               <form action="../admin/module/register/simpan_register.php" method="post">
                 <div class="form-group">
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Nama Lengkap" name="Nama_pengguna">
-                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" name="Username">
-                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" name="Password">
-                    <div class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="mdi mdi-check-circle-outline"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="No Handphone" name="No_hp">
+                    <input type="text" class="form-control" placeholder="Nama Lengkap" name="Nama">
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
@@ -88,10 +57,20 @@
                 </div>
                 <div class="form-group">
                   <div class="input-group">
+                    <input type="password" class="form-control" placeholder="Password" name="Password">
+                    <div class="input-group-append">
+                      <span class="input-group-text">
+                        <i class="mdi mdi-check-circle-outline"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group">
                     <div class="col-sm-4">
                       <div class="form-radio">
                         <label class="form-check-label">
-                          <input type="radio" class="form-check-input" name="Status" id="Status" value="1" checked> Customer </label>
+                          <input type="radio" class="form-check-input" name="Status" id="Status" value="3" checked> Customer </label>
                       </div>
                     </div>
                     <div class="col-sm-4">

@@ -259,6 +259,8 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
         // module ruangan
         elseif ($_GET['module'] == 'list_ruangan') {
           include "module_founder/data_ruangan/list_ruangan.php";
+        } elseif ($_GET['module'] == 'detail_ruangan') {
+          include "module_founder/data_ruangan/detail_ruangan.php";
         } elseif ($_GET['module'] == 'tambah_ruangan') {
           include "module_founder/data_ruangan/tambah_ruangan.php";
         } elseif ($_GET['module'] == 'edit_ruangan') {
