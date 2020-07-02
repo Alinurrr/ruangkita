@@ -20,7 +20,7 @@ $deskripsi = $_POST['deskripsi'];
 $path = "../../upload/" . $nama_file;
 
 if ($tipe_file == 'image/jpeg' || $tipe_file == 'image/png') {
-    if ($ukuran_file <= 1000000) {
+    if ($ukuran_file <= 10000000) {
         if (move_uploaded_file($tmp_file, $path)) {
             $querySimpan = mysqli_query($koneksi, "INSERT INTO tb_ruangan(id_founder, 
                                                                         nama_ruangan, 
@@ -47,6 +47,6 @@ if ($tipe_file == 'image/jpeg' || $tipe_file == 'image/png') {
             // echo "<script> alert('Data Gambar ruangan Gagal Dimasukkan'); window.location='$admin_url'+'adminfounder.php?module=tambah_ruangan';</script>";
         }
     } else {
-        // echo "<script> alert('Data Gambar ruangan Gagal Dimasukkan'); window.location='$admin_url'+'adminfounder.php?module=tambah_ruangan';</script>";
+        // echo "<script> alert('Data Gambar Gagal Dimasukkan, Ukuran Gambar tidak bisa lebih dari 10mb'); window.location='$admin_url'+'adminfounder.php?module=tambah_ruangan';</script>";
     }
 }
