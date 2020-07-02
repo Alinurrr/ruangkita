@@ -39,7 +39,7 @@
                    <tr>
                      <td><?php echo $pro['nama_ruangan']; ?></td>
                      <td>
-                       <img src="upload/<?= $pro['gambar']; ?>" class="thumb-image" height="100px">
+                       <img src="upload/<?= $pro['gambar']; ?>" class="thumb-image" height="100" width="100">
                      </td>
                      <td><?php echo $pro['alamat']; ?></td>
                      <td>

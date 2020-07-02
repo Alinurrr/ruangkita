@@ -63,6 +63,7 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
               <img src="assets/images/logo-mini_Rk.svg" alt="logo" /> </a>
           </div>
           <div class="navbar-menu-wrapper d-flex align-items-center">
+            <h3>Admin RuangKita</h3>
             <ul class="navbar-nav ml-auto">
               <li class="nav-item dropdown">
                 <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
@@ -300,9 +301,16 @@ if (!isset($_SESSION['email']) and !isset($_SESSION['password'])) {
             include "module/data_customer/list_customer.php";
           } elseif ($_GET['module'] == 'list_pesanan') {
             include "module/pesanan_admin/list_pesanan.php";
-          } elseif ($_GET['module'] == 'list_ruangan_admin') {
+          }
+
+          // moudule ruangan
+          elseif ($_GET['module'] == 'list_ruangan_admin') {
             include "module/data_ruangan/list_ruangan_admin.php";
-          } elseif ($_GET['module'] == 'list_Testimoni') {
+          } elseif ($_GET['module'] == 'detail_ruangan_admin') {
+            include "module/data_ruangan/detail_ruangan_admin.php";
+          }
+          // module testimoni
+          elseif ($_GET['module'] == 'list_Testimoni') {
             include "module/data_testimoni/list_Testimoni.php";
           }
 
