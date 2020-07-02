@@ -8371,10 +8371,6 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 .form-control,
-.form-control:focus {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none; }
-
 .form-control {
   -webkit-box-shadow: none;
   box-shadow: none; }

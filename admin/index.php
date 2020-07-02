@@ -33,7 +33,7 @@
                 <div class="form-group">
                   <label class="label">Email</label>
                   <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Email" name="Email">
+                    <input type="text" class="form-control" placeholder="Email" name="Email" autofocus>
                     <div class="input-group-append">
                       <span class="input-group-text">
                         <i class="mdi mdi-check-circle-outline"></i>
